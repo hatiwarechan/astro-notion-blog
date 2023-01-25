@@ -6,6 +6,7 @@ import {
 } from '../server-constants.ts'
 import '../styles/syntax-coloring.css'
 import GoogleAnalytics from '../components/GoogleAnalytics.astro'
+import "@fontsource/klee-one"
 
 export interface Props {
   title: string
@@ -164,9 +165,7 @@ const navItems = [
     min-height: 100vh;
     background: var(--bg);
     color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Segoe UI,
-      Hiragino Kaku Gothic ProN, Hiragino Sans, ヒラギノ角ゴ ProN W3, Arial,
-      メイリオ, Meiryo, sans-serif;
+    font-family: "Klee One", cursive;
     /*-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     */
