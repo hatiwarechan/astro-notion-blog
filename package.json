@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/react": "^1.2.2",
     "@astrojs/rss": "^2.0.0",
-    "@fontsource/zen-maru-gothic": "^4.5.16",
+    "@fontsource/m-plus-rounded-1c": "^4.5.10",
     "@notionhq/client": "^2.2.3",
     "astro": "^1.9.0",
     "katex": "^0.16.4",
