@@ -84,7 +84,7 @@ aside {
   margin: 0.3rem 0;
   font-size: 1rem;
   min-height: 1.8rem;
-  transform:rotateZ(0.03deg);
+  transform:rotateZ(0.05deg);
 }
 .post :global(video),
 .post :global(img) {
