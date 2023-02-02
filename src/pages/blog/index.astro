@@ -24,7 +24,9 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getRankedPosts(),
   getAllTags(),
   getNumberOfPages(),
-])
+]);
+
+posts.pop();
 ---
 
 <Layout title="Blog" path="/blog">
