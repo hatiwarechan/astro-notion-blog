@@ -53,6 +53,7 @@
         "inputs": [
           "!{projectRoot}/**/*",
           "!{projectRoot}/**/.*",
+          "!{projectRoot}/**/.*/**/*",
           {
             "env": "DATABASE_ID"
           }
