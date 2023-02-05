@@ -24,7 +24,7 @@ const siteOGImage = new URL('/イラスト.png', Astro.site)
 const navItems = [
   { label: 'ホーム', path: '/' },
   { label: 'ブログ', path: '/blog' },
-  { label: "free", path: "/free" },
+  { label: "フリー", path: "/free" },
 ]
 ---
 
@@ -45,7 +45,7 @@ const navItems = [
     <meta property="og:image" content={siteOGImage} />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={siteDescription} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content={siteOGImage} />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
   </head>
@@ -105,11 +105,11 @@ const navItems = [
   .header ul li {
     display: inline-block;
     padding: 0 17px;
-    transform:rotateZ(0.03deg);
+    transform:rotateZ(0.05deg);
   }
   .header ul li :global(a.active) {
     color: var(--accents-3);
-    transform:rotateZ(0.03deg);
+    transform:rotateZ(0.05deg);
   }
 
   .container {
@@ -254,10 +254,12 @@ const navItems = [
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.8rem;
+    transform:rotateZ(0.05deg);
   }
   ul, ol {
     margin: 0;
     padding-inline-start: 1.5rem;
+    transform:rotateZ(0.05deg);
   }
   pre {
     margin: 0;
