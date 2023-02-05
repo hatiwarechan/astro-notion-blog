@@ -56,4 +56,9 @@ const { heading, posts } = Astro.props
     content: '';
     background: #333;
   }
+  @media (prefers-color-scheme: dark) {
+    .blog-posts-link ul li:before {
+      background: var(--fg);
+    } 
+  }
 </style>
