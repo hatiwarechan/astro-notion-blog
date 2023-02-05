@@ -85,6 +85,7 @@ aside {
   font-size: 1rem;
   min-height: 1.8rem;
   transform:rotateZ(0.05deg);
+  color: var(--fg);
 }
 .post :global(video),
 .post :global(img) {
