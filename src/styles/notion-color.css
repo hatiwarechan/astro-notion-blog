@@ -26,86 +26,86 @@
   color: rgba(212, 76, 71, 1);
 }
 .gray-background {
-  background: rgba(241, 241, 239, 1) !important;
+  background: rgba(241, 241, 239, 1);
 }
 .brown-background {
-  background: rgba(244, 238, 238, 1) !important;
+  background: rgba(244, 238, 238, 1);
 }
 .orange-background {
-  background: rgba(251, 236, 221, 1) !important;
+  background: rgba(251, 236, 221, 1);
 }
 .yellow-background {
-  background: rgba(251, 243, 219, 1) !important;
+  background: rgba(251, 243, 219, 1);
 }
 .green-background {
-  background: rgba(237, 243, 236, 1) !important;
+  background: rgba(237, 243, 236, 1);
 }
 .blue-background {
-  background: rgba(231, 243, 248, 1) !important;
+  background: rgba(231, 243, 248, 1);
 }
 .purple-background {
-  background: rgba(244, 240, 247, 0.8) !important;
+  background: rgba(244, 240, 247, 0.8);
 }
 .pink-background {
-  background: rgba(249, 238, 243, 0.8) !important;
+  background: rgba(249, 238, 243, 0.8);
 }
 .red-background {
-  background: rgba(253, 235, 236, 1) !important;
+  background: rgba(253, 235, 236, 1);
 }
 
 @media (prefers-color-scheme: dark) {
   .gray, .gray:hover {
-    color: #A4A7A8;
+    color: rgba(164, 167, 168, 1);
   }
   .brown, .brown:hover {
-    color: #937264;
+    color: rgba(148, 114, 99, 1);
   }
   .orange, .orange:hover {
-    color: #FFA344;
+    color: rgba(255, 163, 68, 1);
   }
   .yellow, .yellow:hover {
-    color: #FFDC49;
+    color: rgba(255, 220, 73, 1);
   }
   .green, .green:hover {
-    color: #4DAB9A;
+    color: rgba(77, 171, 154, 1);
   }
   .blue, .blue:hover {
-    color: #529CCA(51, 126, 169, 1);
+    color: rgba(82, 156, 202, 1);
   }
   .purple, .purple:hover {
-    color: #9A6DD7(144, 101, 176, 1);
+    color: rgba(154, 109, 215, 1);
   }
   .pink, .pink:hover {
-    color: #E255A1(193, 76, 138, 1);
+    color: rgba(226, 85, 161, 1);
   }
   .red, .red:hover {
-    color: #FF7369(212, 76, 71, 1);
+    color: rgba(255, 115, 105, 1);
   }
   .gray-background {
-    background: #454B4E(241, 241, 239, 1) !important;
+    background: rgb(69, 75, 78);
   }
   .brown-background {
-    background: #434040(244, 238, 238, 1) !important;
+    background: rgba(67, 64, 64, 1);
   }
   .orange-background {
-    background: #594A3A(251, 236, 221, 1) !important;
+    background: rgba(89, 74, 58, 1);
   }
   .yellow-background {
-    background: #59563B(251, 243, 219, 1) !important;
+    background: rgba(89, 86, 59, 1);
   }
   .green-background {
-    background: #354C4B(237, 243, 236, 1) !important;
+    background: rgba(53, 76, 75, 1);
   }
   .blue-background {
-    background: #364954(231, 243, 248, 1) !important;
+    background: rgba(54, 73, 84, 1);
   }
   .purple-background {
-    background: #443F57(244, 240, 247, 0.8) !important;
+    background: rgba(68, 63, 87, 0.8);
   }
   .pink-background {
-    background: #533B4C(249, 238, 243, 0.8) !important;
+    background: rgba(83, 59, 76, 0.8);
   }
   .red-background {
-    background: #594141(253, 235, 236, 1) !important;
+    background: rgba(89, 65, 65, 1);
   }
 }
