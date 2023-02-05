@@ -52,3 +52,60 @@
 .red-background {
   background: rgba(253, 235, 236, 1) !important;
 }
+
+@media (prefers-color-scheme: dark) {
+  .gray, .gray:hover {
+    color: #A4A7A8;
+  }
+  .brown, .brown:hover {
+    color: #937264;
+  }
+  .orange, .orange:hover {
+    color: #FFA344;
+  }
+  .yellow, .yellow:hover {
+    color: #FFDC49;
+  }
+  .green, .green:hover {
+    color: #4DAB9A;
+  }
+  .blue, .blue:hover {
+    color: #529CCA(51, 126, 169, 1);
+  }
+  .purple, .purple:hover {
+    color: #9A6DD7(144, 101, 176, 1);
+  }
+  .pink, .pink:hover {
+    color: #E255A1(193, 76, 138, 1);
+  }
+  .red, .red:hover {
+    color: #FF7369(212, 76, 71, 1);
+  }
+  .gray-background {
+    background: #454B4E(241, 241, 239, 1) !important;
+  }
+  .brown-background {
+    background: #434040(244, 238, 238, 1) !important;
+  }
+  .orange-background {
+    background: #594A3A(251, 236, 221, 1) !important;
+  }
+  .yellow-background {
+    background: #59563B(251, 243, 219, 1) !important;
+  }
+  .green-background {
+    background: #354C4B(237, 243, 236, 1) !important;
+  }
+  .blue-background {
+    background: #364954(231, 243, 248, 1) !important;
+  }
+  .purple-background {
+    background: #443F57(244, 240, 247, 0.8) !important;
+  }
+  .pink-background {
+    background: #533B4C(249, 238, 243, 0.8) !important;
+  }
+  .red-background {
+    background: #594141(253, 235, 236, 1) !important;
+  }
+}
