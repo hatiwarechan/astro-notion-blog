@@ -41,4 +41,9 @@ const { block, headings } = Astro.props
   .callout div:first-child {
     margin-right: 0.7rem;
   }
+  @media (prefers-color-scheme: dark) {
+    .callout{
+      background: rgb(69, 75, 78);
+    }
+  }
 </style>

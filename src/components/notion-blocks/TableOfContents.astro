@@ -41,12 +41,17 @@ const { block, headings } = Astro.props
     text-decoration: underline;
   }
   .table-of-contents > a:hover {
-    background: rgba(241, 241, 239, 1) !important;
+    background: rgba(241, 241, 239, 1);
   }
   .table-of-contents > a.indent-1 {
     padding-left: 1.5rem;
   }
   .table-of-contents > a.indent-2 {
     padding-left: 3.0rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .table-of-contents > a:hover {
+      background: rgba(63, 63, 63, 1);
+    }
   }
 </style>
