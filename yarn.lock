@@ -381,11 +381,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/m-plus-rounded-1c@^4.5.10":
-  version "4.5.10"
-  resolved "https://registry.yarnpkg.com/@fontsource/m-plus-rounded-1c/-/m-plus-rounded-1c-4.5.10.tgz#d98c7df36bd593bd44bc6060c3d8afecffb52d55"
-  integrity sha512-spzDBo7ni2QyY0XaTKtu97juLq9cFgWSIQ2OpP2nAd++WCaKu1KFsobWCpSqRbBJhPXdMrbanRprcslYI6EeRg==
-
 "@gar/promisify@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
