@@ -1,0 +1,31 @@
+---
+import * as interfaces from "../lib/interfaces.ts";
+import { getPostBySlug, getAllBlocksByBlockId } from "../lib/notion/client.ts";
+import { getPostLink } from "../lib/blog-helpers.ts";
+import Layout from "../layouts/Layout.astro";
+import PostTitle from "../components/PostTitle.astro";
+import PostFeaturedImage from "../components/PostFeaturedImage.astro";
+import PostBody from "../components/PostBody.astro";
+import styles from "../styles/blog.module.css";
+
+const slug = "free";
+
+const post = await getPostBySlug(slug);
+if (!post) {
+  throw new Error("Post not found. slug: ${slug}");
+}
+
+const [blocks] = await Promise.all([getAllBlocksByBlockId(post.PageId)]);
+---
+
+<Layout title={post.Title} path={getPostLink(post.Slug)}>
+  <div className={styles.container}>
+    <main>
+      <div className={styles.post}>
+        <PostTitle post={post} enableLink={false} />
+        <PostBody blocks={blocks} />
+        <footer></footer>
+      </div>
+    </main>
+  </div>
+</Layout>
