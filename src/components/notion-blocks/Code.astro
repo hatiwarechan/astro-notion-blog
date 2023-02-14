@@ -28,15 +28,25 @@ const grammer = Prism.languages[language.toLowerCase()] || Prism.languages.javas
 ---
 
 <div class="code">
-  {language === 'mermaid' ? (
-      <pre class="mermaid">{code}</pre>
-    ) : (
-      <div>
-        <button class="copy" data-code={code} data-done-text="Copied!">Copy</button>
-      </div>
-      <pre><code set:html={Prism.highlight(code, grammer, language)} /></pre>
-    )}
-    <Caption richTexts={block.Code.Caption} />
+  <div>
+    {
+      language === 'mermaid' ? (
+        <pre class="mermaid">{code}</pre>
+      ) : (
+        <>
+          <div>
+            <button class="copy" data-code={code} data-done-text="Copied!">
+              Copy
+            </button>
+          </div>
+          <pre>
+            <code set:html={Prism.highlight(code, grammer, language)} />
+          </pre>
+        </>
+      )
+    }
+  </div>
+  <Caption richTexts={block.Code.Caption} />
 </div>
 
 <script>
@@ -58,10 +68,12 @@ const grammer = Prism.languages[language.toLowerCase()] || Prism.languages.javas
   .code {
     display: block;
     width: 100%;
+  }
+  .code > div {
     background: rgb(247, 246, 243);
     border-radius: var(--radius);
   }
-  .code div {
+  .code > div div {
     display: flex;
     justify-content: flex-end;
   }
@@ -86,5 +98,6 @@ const grammer = Prism.languages[language.toLowerCase()] || Prism.languages.javas
     color: var(--fg);
     padding: 0;
     background: rgb(247, 246, 243) !important;
+    border-radius: 0;
   }
 </style>
