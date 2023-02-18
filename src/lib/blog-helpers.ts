@@ -1,5 +1,5 @@
 import fetch, { Response, AbortError } from 'node-fetch'
-import { REQUEST_TIMEOUT_MS } from '../server-constants'
+import { BASE_PATH, REQUEST_TIMEOUT_MS } from '../server-constants'
 import type {
   Post,
   Heading1,
@@ -7,6 +7,7 @@ import type {
   Heading3,
   RichText,
 } from './interfaces'
+import { pathJoin } from './utils'
 
 export const fetchImageAsDataURI = async (url: string): Promise<string> => {
   const controller = new AbortController()
@@ -93,6 +94,14 @@ export const buildPostFeaturedImageURLs = (posts: Post[]): (URL | null)[] => {
       }
       return url
     })
+}
+
+export const getNavLink = (nav: string) => {
+  if ((!nav || nav === '/') && BASE_PATH) {
+    return pathJoin(BASE_PATH, '') + '/'
+  }
+
+  return pathJoin(BASE_PATH, nav)
 }
 
 export const getPostLink = (slug: string) => {
