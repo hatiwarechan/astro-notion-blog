@@ -14,7 +14,7 @@ const getSite = function() {
   }
 
   if (CUSTOM_DOMAIN) {
-    return new URL(BASE_PATH, `https://${CUSTOM_DOMAIN}`);
+    return new URL(BASE_PATH, `https://${CUSTOM_DOMAIN}`).toString();
   }
 
   return new URL(
