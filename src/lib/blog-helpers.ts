@@ -9,6 +9,10 @@ import type {
 } from './interfaces'
 import { pathJoin } from './utils'
 
+export const imageFilePath = (url: URL): string => {
+  return '/notion/' + url.pathname.split('/').slice(-2).join('/')
+}
+
 export const fetchImageAsDataURI = async (url: string): Promise<string> => {
   const controller = new AbortController()
   const timeout = setTimeout(() => { controller.abort() }, REQUEST_TIMEOUT_MS)
