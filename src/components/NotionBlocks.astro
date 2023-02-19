@@ -117,51 +117,55 @@ const bookmarkURLs = blocks
 const bookmarkURLMap = await buildURLToHTMLMap(bookmarkURLs)
 ---
 
-{blocks.map((block: interfaces.Block) => {
-  switch (block.Type) {
-    case 'paragraph':
-      return <Paragraph block={block} headings={headings} />
-    case 'heading_1':
-      return <Heading1 block={block} headings={headings} />
-    case 'heading_2':
-      return <Heading2 block={block} headings={headings} />
-    case 'heading_3':
-      return <Heading3 block={block} headings={headings} />
-    case 'table_of_contents':
-      return <TableOfContents block={block} headings={headings} />
-    case 'image':
-      return <Image block={block} urlMap={imageURLMap} />
-    case 'video':
-      return <Video block={block} />
-    case 'code':
-      return <Code block={block} />
-    case 'quote':
-      return <Quote block={block} headings={headings} />
-    case 'equation':
-      return <Equation block={block} />
-    case 'callout':
-      return <Callout block={block} headings={headings} />
-    case 'embed':
-      return <Embed block={block} urlMap={bookmarkURLMap} />
-    case 'bookmark':
-    case 'link_preview':
-      return <Bookmark block={block} urlMap={bookmarkURLMap} />
-    case 'divider':
-      return <Divider />
-    case 'table':
-      return <Table block={block} />
-    case 'column_list':
-      return <ColumnList block={block} headings={headings} />
-    case 'bulleted_list':
-      return <BulletedListItems block={block} headings={headings} />
-    case 'numbered_list':
-      return <NumberedListItems block={block} level={level} headings={headings} />
-    case 'to_do_list':
-      return <ToDo block={block} headings={headings} />
-    case 'synced_block':
-      return <SyncedBlock block={block} headings={headings} />
-    case 'toggle':
-      return <Toggle block={block} headings={headings} />
-  }
-  return null
-  })}
+{
+  blocks.map((block: interfaces.Block) => {
+    switch (block.Type) {
+      case 'paragraph':
+        return <Paragraph block={block} headings={headings} />
+      case 'heading_1':
+        return <Heading1 block={block} headings={headings} />
+      case 'heading_2':
+        return <Heading2 block={block} headings={headings} />
+      case 'heading_3':
+        return <Heading3 block={block} headings={headings} />
+      case 'table_of_contents':
+        return <TableOfContents block={block} headings={headings} />
+      case 'image':
+        return <Image block={block} />
+      case 'video':
+        return <Video block={block} />
+      case 'code':
+        return <Code block={block} />
+      case 'quote':
+        return <Quote block={block} headings={headings} />
+      case 'equation':
+        return <Equation block={block} />
+      case 'callout':
+        return <Callout block={block} headings={headings} />
+      case 'embed':
+        return <Embed block={block} urlMap={bookmarkURLMap} />
+      case 'bookmark':
+      case 'link_preview':
+        return <Bookmark block={block} urlMap={bookmarkURLMap} />
+      case 'divider':
+        return <Divider />
+      case 'table':
+        return <Table block={block} />
+      case 'column_list':
+        return <ColumnList block={block} headings={headings} />
+      case 'bulleted_list':
+        return <BulletedListItems block={block} headings={headings} />
+      case 'numbered_list':
+        return (
+          <NumberedListItems block={block} level={level} headings={headings} />
+        )
+      case 'to_do_list':
+        return <ToDo block={block} headings={headings} />
+      case 'synced_block':
+        return <SyncedBlock block={block} headings={headings} />
+      case 'toggle':
+        return <Toggle block={block} headings={headings} />
+    }
+    return null
+  })
+}
