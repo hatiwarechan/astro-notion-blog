@@ -31,5 +31,9 @@ const getSite = function() {
 export default defineConfig({
   site: getSite(),
   base: BASE_PATH,
-  integrations: [OGImageUploader(), FeaturedImageDownloader(), PublicNotionCopier()],
+  integrations: [
+    OGImageUploader(),
+    FeaturedImageDownloader(),
+    PublicNotionCopier(),
+  ],
 });
