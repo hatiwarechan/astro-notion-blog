@@ -24,6 +24,7 @@ export interface Block {
   NumberedListItem?: NumberedListItem
   ToDo?: ToDo
   Image?: Image
+  File?: File
   Code?: Code
   Quote?: Quote
   Equation?: Equation
@@ -98,6 +99,13 @@ export interface Image {
 export interface Video {
   Caption: RichText[]
   Type: string
+  External?: External
+}
+
+export interface File {
+  Caption: RichText[]
+  Type: string
+  File?: FileObject
   External?: External
 }
 
