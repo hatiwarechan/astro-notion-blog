@@ -10,7 +10,7 @@ const { post } = Astro.props
 ---
 
 <div class="read-more-link">
-  <a href={getPostLink(post.Slug)}>Read more</a>
+  <a href={getPostLink(post.Slug)}>続きを読む</a>
 </div>
 
 <style>
@@ -26,6 +26,7 @@ const { post } = Astro.props
     font-size: 0.85rem;
     text-align: center;
     line-height: 3rem;
+    transform:rotateZ(0.05deg);
   }
   @media (max-width: 640px) {
     .read-more-link a {
