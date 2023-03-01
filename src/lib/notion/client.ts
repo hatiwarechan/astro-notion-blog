@@ -400,8 +400,15 @@ function _buildBlock(blockObject: responses.BlockObject): Block {
         }
         if (blockObject.image.type === 'external' && blockObject.image.external) {
           image.External = { Url: blockObject.image.external.url }
-        } else if (blockObject.image.type === 'file' && blockObject.image.file) {
-          image.File = { Url: blockObject.image.file.url, ExpiryTime: blockObject.image.file.expiry_time }
+        } else if (
+          blockObject.image.type === 'file' &&
+          blockObject.image.file
+        ) {
+          image.File = {
+            Type: blockObject.image.type,
+            Url: blockObject.image.file.url,
+            ExpiryTime: blockObject.image.file.expiry_time,
+          }
         }
         block.Image = image
       }
@@ -422,6 +429,7 @@ function _buildBlock(blockObject: responses.BlockObject): Block {
           blockObject.file.file
         ) {
           file.File = {
+            Type: blockObject.file.type,
             Url: blockObject.file.file.url,
             ExpiryTime: blockObject.file.file.expiry_time,
           }
@@ -460,9 +468,15 @@ function _buildBlock(blockObject: responses.BlockObject): Block {
       if (blockObject.callout) {
         let icon: FileObject | Emoji | null = null
         if (blockObject.callout.icon.type === 'emoji' && 'emoji' in blockObject.callout.icon) {
-          icon = { Emoji: blockObject.callout.icon.emoji }
+          icon = {
+            Type: blockObject.callout.icon.type,
+            Emoji: blockObject.callout.icon.emoji,
+          }
         } else if (blockObject.callout.icon.type === 'external' && 'external' in blockObject.callout.icon) {
-          icon = { Url: blockObject.callout.icon.external?.url || '' }
+          icon = {
+            Type: blockObject.callout.icon.type,
+            Url: blockObject.callout.icon.external?.url || '',
+          }
         }
 
         const callout: Callout = {
@@ -677,13 +691,25 @@ function _buildPost(pageObject: responses.PageObject): Post {
   let icon: FileObject | Emoji | null = null
   if (pageObject.icon) {
     if (pageObject.icon.type === 'emoji' && 'emoji' in pageObject.icon) {
-      icon = { Emoji: pageObject.icon.emoji }
+      icon = {
+        Type: pageObject.icon.type,
+        Emoji: pageObject.icon.emoji,
+      }
     } else if (pageObject.icon.type === 'external' && 'external' in pageObject.icon) {
-      icon = { Url: pageObject.icon.external?.url || '' }
+      icon = {
+        Type: pageObject.icon.type,
+        Url: pageObject.icon.external?.url || '',
+      }
     }
   }
 
-  const cover: FileObject = { Url: pageObject.cover?.external?.url || '' }
+  let cover: FileObject | null = null
+  if (pageObject.cover) {
+    cover = {
+      Type: pageObject.cover.type,
+      Url: pageObject.cover.external?.url || '',
+    }
+  }
 
   let featuredImage: FileObject | null = null
   if (
@@ -692,6 +718,7 @@ function _buildPost(pageObject: responses.PageObject): Post {
     prop.FeaturedImage.files[0].file
   ) {
     featuredImage = {
+      Type: prop.FeaturedImage.type,
       Url: prop.FeaturedImage.files[0].file.url,
       ExpiryTime: prop.FeaturedImage.files[0].file.expiry_time,
     }
