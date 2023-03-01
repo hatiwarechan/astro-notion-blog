@@ -23,7 +23,7 @@ if (block.Image.External) {
     <div>
       <div>
         {ENABLE_LIGHTBOX ? (
-          <a data-fslightbox href={image}>
+          <a data-fslightbox href={image} data-type="image">
             <img src={image} alt="image block" />
           </a>
         ) : (
@@ -32,7 +32,8 @@ if (block.Image.External) {
       </div>
       <Caption richTexts={block.Image.Caption} />
     </div>
-    )}
+    )
+  }
 </figure>
 
 <style>
