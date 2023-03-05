@@ -15,6 +15,14 @@ The blog is generated statically by [Astro](https://astro.build/) so very fast.
 - :hammer_and_wrench: **Can fully customize** the site's appearance
 - :white_check_mark: Using **official Notion APIs**
 
+## Screenshots
+
+<img src="https://user-images.githubusercontent.com/1063435/216562042-818bc312-1941-4b5d-b281-15e0bcb6f153.png" width="480">
+
+## Demo
+
+[https://astro-notion-blog.pages.dev](https://astro-notion-blog.pages.dev)
+
 ## Quick Start
 
 ### Requirements

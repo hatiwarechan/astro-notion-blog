@@ -13,7 +13,15 @@ astro-notion-blog を使えば [Notion](https://www.notion.so) で書けるブ�
 - :rocket: ページの表示が**爆速**
 - :pencil: **Notionで**ブログが書ける
 - :hammer_and_wrench: ブログの見た目を**自由にカスタマイズ可能**
-- :white_check_mark: **Notion 公式API**を使っているため安心
+- :white_check_mark: **Notion 公式 API**を使っているため安心
+
+## スクリーンショット
+
+<img src="https://user-images.githubusercontent.com/1063435/216562042-818bc312-1941-4b5d-b281-15e0bcb6f153.png" width="480">
+
+## デモ
+
+[https://astro-notion-blog.pages.dev](https://astro-notion-blog.pages.dev)
 
 ## クイックスタート
 
