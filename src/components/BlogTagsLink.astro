@@ -33,8 +33,9 @@ const { heading, tags } = Astro.props
   .blog-tags-link h3 {
     margin: 0;
     padding-left: 0.4rem;
-    color: #777;
+    color: var(--fg);
     font-size: 0.95rem;
+    transform:rotateZ(0.05deg);
   }
   .blog-tags-link ul {
     list-style-type: none;
@@ -47,6 +48,7 @@ const { heading, tags } = Astro.props
     font-size: 1rem;
     padding: 0.4rem;
     line-height: 1.2rem;
+    transform:rotateZ(0.05deg);
 
     font-size: 0.9rem;
     gap: 6px;
@@ -57,5 +59,6 @@ const { heading, tags } = Astro.props
     padding: 2px 6px;
     line-height: 1.2;
     color: var(--fg);
+    transform:rotateZ(0.05deg);
   }
 </style>
