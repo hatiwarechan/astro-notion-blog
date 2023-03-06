@@ -25,6 +25,8 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   getAllTags(),
   getNumberOfPages(),
 ])
+
+posts.pop();
 ---
 
 <Layout>
