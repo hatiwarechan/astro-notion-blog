@@ -55,12 +55,12 @@ const client = new Client({
   auth: NOTION_API_SECRET,
 })
 
-let cache: Post[] | null = null
-
+let postsCache: Post[] | null = null
+let dbCache: Database | null = null
 
 export async function getAllPosts(): Promise<Post[]> {
-  if (cache !== null) {
-    return Promise.resolve(cache)
+  if (postsCache !== null) {
+    return Promise.resolve(postsCache)
   }
 
   const params: requestParams.QueryDatabase = {
@@ -104,10 +104,10 @@ export async function getAllPosts(): Promise<Post[]> {
     params['start_cursor'] = res.next_cursor as string
   }
 
-  cache = results
-    .filter(pageObject => _validPageObject(pageObject))
-    .map(pageObject => _buildPost(pageObject))
-  return cache
+  postsCache = results
+    .filter((pageObject) => _validPageObject(pageObject))
+    .map((pageObject) => _buildPost(pageObject))
+  return postsCache
 }
 
 export async function getPosts(pageSize = 10): Promise<Post[]> {
@@ -307,6 +307,10 @@ export async function downloadFile(url: URL) {
 }
 
 export async function getDatabase(): Promise<Database> {
+  if (dbCache !== null) {
+    return Promise.resolve(dbCache)
+  }
+
   const params: requestParams.RetrieveDatabase = {
     database_id: DATABASE_ID,
   }
@@ -347,6 +351,7 @@ export async function getDatabase(): Promise<Database> {
     Cover: cover,
   }
 
+  dbCache = database
   return database
 }
 
