@@ -52,6 +52,7 @@ const siteOGImage = new URL('/イラスト.png', Astro.site)
         <header>
           <h1>
             <a href={getNavLink('/')}>{database.Title}</a>
+            <span><Darkmode /></span>
           </h1>
           <div class="description">
             {database.Description}
@@ -128,7 +129,10 @@ const siteOGImage = new URL('/イラスト.png', Astro.site)
   main header h1 {
     padding: 0.5rem 0;
     font-weight: 700;
-    color: #000;
+    color: var(--fg);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center
   }
   main header h1 a {
     color: inherit;
