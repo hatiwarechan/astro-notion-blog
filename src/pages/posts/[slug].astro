@@ -89,27 +89,35 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
 }
 ---
 
-<Layout title={post.Title} description={post.Excerpt} path={getPostLink(post.Slug)} ogImage={ogImage}>
-  <div className={styles.container}>
-    <main>
-      <div className={styles.post}>
-        <PostDate post={post} />
-        <PostTags post={post} />
-        <PostTitle post={post} enableLink={false} />
-        <PostBody blocks={blocks} />
-        <PostTags post={post} />
+<Layout
+  title={post.Title}
+  description={post.Excerpt}
+  path={getPostLink(post.Slug)}
+  ogImage={ogImage}
+>
+  <div slot="main" class={styles.main}>
+    <div class={styles.post}>
+      <PostDate post={post} />
+      <PostTags post={post} />
+      <PostTitle post={post} enableLink={false} />
+      <PostBody blocks={blocks} />
+      <PostTags post={post} />
 
-        <footer>
-          <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
-        </footer>
-      </div>
-    </main>
+      <footer>
+        <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
+      </footer>
+    </div>
+  </div>
 
-    <aside>
-      <BlogPostsLink heading="関連記事" posts={postsHavingSameTag.filter((p: interfaces.Post) => p.Slug !== post.Slug)} />
-      <BlogPostsLink heading="おすすめ" posts={rankedPosts} />
-      <BlogPostsLink heading="最新記事" posts={recentPosts} />
-      <BlogTagsLink heading="カテゴリ" tags={tags} />
-    </aside>
+  <div slot="aside" class="aside">
+    <BlogPostsLink
+      heading="関連記事"
+      posts={postsHavingSameTag.filter(
+        (p: interfaces.Post) => p.Slug !== post.Slug
+      )}
+    />
+    <BlogPostsLink heading="おすすめ" posts={rankedPosts} />
+    <BlogPostsLink heading="最新記事" posts={recentPosts} />
+    <BlogTagsLink heading="カテゴリ" tags={tags} />
   </div>
 </Layout>
