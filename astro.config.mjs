@@ -36,4 +36,7 @@ export default defineConfig({
     FeaturedImageDownloader(),
     PublicNotionCopier(),
   ],
+  server:{
+    host: '0.0.0.0',
+  },
 });
