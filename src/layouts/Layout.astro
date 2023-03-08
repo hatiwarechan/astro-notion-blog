@@ -103,6 +103,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
                   )
                 }
               </a>
+              <div><Darkmode /></div>
             </h1>
             <div class="description">
               {database.Description}
@@ -194,11 +195,23 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     padding: 20px 0 20px;
   }
   main header h1 {
+    display:flex;
+    white-space: nowrap;
     font-weight: 700;
     color: var(--fg);
   }
+  main header h1 div{
+    padding: 0.6rem;
+    padding-left: 2rem;
+  }
+  @media (max-width: 640px) {
+    main header h1 div {
+      padding-top: 0.5rem;
+      padding-left: 2rem;
+    }
+  }
   main header h1 a {
-    display: block;
+    display: inline-block;
     color: inherit;
   }
   main header h1 a:hover {
