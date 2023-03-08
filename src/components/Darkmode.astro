@@ -15,7 +15,7 @@
     --fg: #ced5d9;
     --accents-1: #5ca053;
     --accents-2: #76c06c;
-    --accents-3: #a5a5a5;;
+    --accents-3: #a5a5a5;
   }
   .darkmode .header h1 {
     color: var(--fg);
@@ -264,6 +264,17 @@
 .darkmode div.post-relative-link > div > a.colored {
   background:rgb(32,32,32)
 }
+
+  /* --------------------
+  切り替え時の速度
+  -------------------- */
+body {
+  transition: 0.3s;
+}
+aside{
+  transition: 0.3s;
+}
+
   
   /* --------------------
   ダークモードトグル
