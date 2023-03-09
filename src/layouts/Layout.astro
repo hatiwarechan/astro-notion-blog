@@ -441,10 +441,27 @@ const asidePaddingTop = coverImageURL ? '100px' : '60px'
     line-height: 1.2rem;
   }
 
-  .nav {
-  display:flex;
-  justify-content: center;
-  align-items:center;
-  white-space: nowrap;
+body {
+  --sb-track-color: #e7e7e7;
+  --sb-thumb-color: #d670a0;
+  --sb-size: 10px;
+
+  scrollbar-color: var(--sb-thumb-color) 
+                   var(--sb-track-color);
 }
+
+body::-webkit-scrollbar {
+  width: var(--sb-size) 
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+  
+  }
 </style>
