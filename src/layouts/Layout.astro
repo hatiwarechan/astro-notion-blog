@@ -121,6 +121,7 @@ const asidePaddingTop = coverImageURL ? '100px' : '60px'
             </div>
           </footer>
         </div>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"><div id="pagetop"><a href="#top"><i class="fas fa-arrow-up"></i></a></div>
       </main>
 
       <aside>
@@ -462,6 +463,35 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 10px;
+}
+
+#pagetop {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    margin: 0;
+    
+}
+#pagetop a{
+    position: relative;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    background:rgba(184, 184, 184, 0.8);/*背景の色を変える*/
+    color: rgba(255, 255, 255, 0.8);/*アイコンの色を変える*/
+    align-items: center;
+    text-decoration: none;
+    font-size: 32px;
   
   }
+#pagetop a:hover {
+    opacity: .7;
+}
+@media screen and (max-width:767px) {
+#pagetop a {
+    width: 45px;
+    height: 45px;
+}
+}
 </style>
