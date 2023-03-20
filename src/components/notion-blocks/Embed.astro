@@ -1,9 +1,10 @@
 ---
 import * as interfaces from '../../lib/interfaces.ts'
-import { isTweetURL, isSpotifyURL } from '../../lib/blog-helpers.ts'
+import { isTweetURL, isSpotifyURL, isBandcampURL } from '../../lib/blog-helpers.ts'
 import Bookmark from './Bookmark.astro'
 import TweetEmbed from './TweetEmbed.astro'
 import SpotifyEmbed from './SpotifyEmbed.astro'
+import BandcampEmbed from './BandcampEmbed.astro'
 
 export interface Props {
   block: interfaces.Block
@@ -27,6 +28,8 @@ try {
     </div>
   ) : isSpotifyURL(url) ? (
     <SpotifyEmbed url={url} />
+  ) : isBandcampURL(url) ? (
+    <BandcampEmbed url={url} />
   ) : (
     <Bookmark block={block} urlMap={urlMap} />
   )

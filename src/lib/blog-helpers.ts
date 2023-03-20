@@ -179,6 +179,10 @@ export const isSpotifyURL = (url: URL): boolean => {
   return /^https?:\/\/open\.spotify\.com\/(track|album|playlist)\/[a-zA-Z0-9]+/.test(url.toString())
 }
 
+export const isBandcampURL = (url: URL): boolean => {
+  return /^https:\/\/bandcamp\.com\/EmbeddedPlayer/.test(url.toString())
+}
+
 export const isYouTubeURL = (url: URL): boolean => {
   if (['www.youtube.com', 'youtube.com', 'youtu.be'].includes(url.hostname)) {
     return true

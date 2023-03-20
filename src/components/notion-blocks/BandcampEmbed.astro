@@ -1,0 +1,24 @@
+---
+export const isBandcampURL = (url: URL): boolean => {
+    return /^https?:\/\/([a-z0-9-]+\.)?bandcamp\.com\/(track|album)\/[a-zA-Z0-9-]+/.test(url.toString())
+  }
+  
+  export interface Props {
+    url: string
+  }
+  
+  const { url } = Astro.props
+---
+  
+  <iframe
+    src={`${url}/size=large/bgcol=333333/linkcol=2ebd35/transparent=true/`}
+    seamless
+    style={{
+      border: '0',
+      width: '100%',
+      height: '120px',
+    }}
+  >
+    <a href={url}>{url}</a>
+  </iframe>
+  
