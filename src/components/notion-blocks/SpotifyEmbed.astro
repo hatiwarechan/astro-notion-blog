@@ -1,0 +1,23 @@
+---
+import { isSpotifyURL } from '../../lib/blog-helpers.ts'
+
+export interface Props {
+  url: string
+}
+
+const { url } = Astro.props
+---
+
+{isSpotifyURL(new URL(url)) ? (
+  <div class="spotify-embed">
+    <iframe src={`https://open.spotify.com/embed${new URL(url).pathname}`} width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
+) : null}
+
+<style>
+  .spotify-embed {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+</style>

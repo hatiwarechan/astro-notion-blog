@@ -175,6 +175,10 @@ export const isTweetURL = (url: URL): boolean => {
   return /https:\/\/twitter.com\/[^/]+\/status\/[\d]+/.test(url.toString())
 }
 
+export const isSpotifyURL = (url: URL): boolean => {
+  return /^https?:\/\/open\.spotify\.com\/(track|album|playlist)\/[a-zA-Z0-9]+/.test(url.toString())
+}
+
 export const isYouTubeURL = (url: URL): boolean => {
   if (['www.youtube.com', 'youtube.com', 'youtu.be'].includes(url.hostname)) {
     return true
