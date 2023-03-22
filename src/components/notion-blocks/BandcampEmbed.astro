@@ -1,24 +1,32 @@
 ---
 export const isBandcampURL = (url: URL): boolean => {
-    return /^https?:\/\/([a-z0-9-]+\.)?bandcamp\.com\/(track|album)\/[a-zA-Z0-9-]+/.test(url.toString())
-  }
-  
-  export interface Props {
-    url: string
-  }
-  
-  const { url } = Astro.props
+  return /^https?:\/\/([a-z0-9-]+\.)?bandcamp\.com\/(track|album)\/[a-zA-Z0-9-]+/.test(url.toString())
+}
+
+export interface Props {
+  url: string
+}
+
+const { url } = Astro.props
+
+const isTrack = url.includes('/track='); 
+
+const iframeProps = isTrack ? { 
+  src: `${url}/size=large/bgcol=333333/linkcol=5ca053/tracklist=false/artwork=small/transparent=true/`,
+  height: '120px',
+} : { 
+  src: `${url}/size=large/bgcol=333333/linkcol=5ca053/artwork=small/transparent=true/`,
+  height: '400px',
+};
 ---
-  
-  <iframe
-    src={`${url}/size=large/bgcol=333333/linkcol=2ebd35/transparent=true/`}
-    seamless
-    style={{
-      border: '0',
-      width: '100%',
-      height: '120px',
-    }}
-  >
-    <a href={url}>{url}</a>
-  </iframe>
-  
+
+<iframe
+  {...iframeProps} 
+  seamless
+  style={{
+    border: '0',
+    width: '100%',
+  }}
+>
+  <a href={url}>{url}</a>
+</iframe>
