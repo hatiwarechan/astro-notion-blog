@@ -1,0 +1,30 @@
+---
+export const isSoundCloudURL = (url: URL): boolean => {
+    return /^https?:\/\/(w\.|)soundcloud\.com\/(player\/\?url=|tracks\/|playlists\/)/.test(url.toString())
+  }
+  
+  export interface Props {
+    url: string
+  }
+  
+  const { url } = Astro.props
+  
+  const isPlaylist = url.includes('/playlists/');
+  const height = isPlaylist ? '300' : '116';
+  
+  const iframeProps = { 
+    src: `${url}`,
+    height: `${height}px`,
+  };
+--- 
+  
+  <iframe
+    {...iframeProps} 
+    seamless
+    style={{
+      width: '100%',
+    }}
+  >
+    <a href={url}>{url}</a>
+  </iframe>
+  

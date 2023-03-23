@@ -183,6 +183,10 @@ export const isBandcampURL = (url: URL): boolean => {
   return /^https:\/\/bandcamp\.com\/EmbeddedPlayer/.test(url.toString())
 }
 
+export const isSoundCloudURL = (url: URL): boolean => {
+  return /^https?:\/\/w\.soundcloud\.com\/player\//.test(url.toString());
+}
+
 export const isYouTubeURL = (url: URL): boolean => {
   if (['www.youtube.com', 'youtube.com', 'youtu.be'].includes(url.hostname)) {
     return true
