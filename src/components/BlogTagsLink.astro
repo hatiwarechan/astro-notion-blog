@@ -42,6 +42,8 @@ const { heading, tags } = Astro.props
     padding: 0;
     margin-top: 0.3rem;
     margin-block-end: 1rem;
+    display:flex;
+    flex-wrap: wrap;
   }
   .blog-tags-link ul li {
     position: relative;
@@ -49,9 +51,10 @@ const { heading, tags } = Astro.props
     padding: 0.4rem;
     line-height: 1.2rem;
     transform:rotateZ(0.05deg);
-
     font-size: 0.9rem;
     gap: 6px;
+    display:flex;
+    flex-wrap: wrap;
   }
   .blog-tags-link ul li a {
     min-width: 0;
