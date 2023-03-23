@@ -176,7 +176,7 @@ export const isTweetURL = (url: URL): boolean => {
 }
 
 export const isSpotifyURL = (url: URL): boolean => {
-  return /^https?:\/\/open\.spotify\.com\/(track|album|playlist)\/[a-zA-Z0-9]+/.test(url.toString())
+  return /^https?:\/\/open\.spotify\.com\/(track|album|playlist|artist|show|episode)\/[a-zA-Z0-9]+/.test(url.toString())
 }
 
 export const isBandcampURL = (url: URL): boolean => {
