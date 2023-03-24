@@ -187,6 +187,11 @@ export const isSoundCloudURL = (url: URL): boolean => {
   return /^https?:\/\/w\.soundcloud\.com\/player\//.test(url.toString());
 }
 
+export const isNicoVideoURL = (url: URL): boolean => {
+  return /^https:\/\/ext\.nicovideo\.jp\/thumb\//.test(url.toString())
+}
+
+
 export const isYouTubeURL = (url: URL): boolean => {
   if (['www.youtube.com', 'youtube.com', 'youtu.be'].includes(url.hostname)) {
     return true
