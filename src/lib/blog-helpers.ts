@@ -188,7 +188,7 @@ export const isSoundCloudURL = (url: URL): boolean => {
 }
 
 export const isNicoVideoURL = (url: URL): boolean => {
-  return /^https:\/\/ext\.nicovideo\.jp\/thumb\//.test(url.toString())
+  return /^https:\/\/(ext|embed)\.nicovideo\.jp\/(thumb\/|watch\/)/.test(url.toString());
 }
 
 

@@ -1,5 +1,7 @@
 ---
-import { isNicoVideoURL } from '../../lib/blog-helpers.ts'
+export const isNicoVideoURL = (url: URL): boolean => {
+  return /^https:\/\/(embed|www)\.nicovideo\.jp\/(watch|series|mylist)\/[a-z0-9]+/.test(url.toString())
+}
 
 export interface Props {
   url: string
@@ -7,20 +9,30 @@ export interface Props {
 
 const { url } = Astro.props
 
-const isNico = isNicoVideoURL(new URL(url));
+const nicoVideoUrl = new URL(url)
+const isNico = isNicoVideoURL(nicoVideoUrl)
 
 const iframeProps = {
-  src: isNico ? `https://ext.nicovideo.jp/thumb/${url.split('/').pop()}` : '',
-  width: '312',
-  height: '176',
+  src: isNico
+    ? `https://embed.nicovideo.jp/watch/${nicoVideoUrl.pathname.split('/').pop()}`
+    : url,
+  width: isNico ? '640' : '312',
+  height: isNico ? '360' : '176',
   scrolling: 'no',
   style: {
     border: 'solid 1px #ccc',
   },
   frameborder: '0',
-};
+}
 ---
 
-{isNico ? (
-  <iframe {...iframeProps}></iframe>
-) : null}
+<iframe {...iframeProps} />
+
+<style>
+  @media (max-width: 640px) {
+  iframe[src*="embed.nicovideo.jp/watch"] {
+    width: 100%;
+    height: 180px;
+  }
+}
+</style>
