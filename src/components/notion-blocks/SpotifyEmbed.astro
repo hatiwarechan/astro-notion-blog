@@ -20,9 +20,17 @@ const iframeProps = {
 
 <iframe
   {...iframeProps} 
-  width="100%"
+  width="85%"
   frameBorder="0"
   allowTransparency="true"
   allow="encrypted-media"
 />
 </iframe>
+
+<style>
+  @media (max-width:640px) {
+  iframe {
+    width: 100%;
+  }
+  }
+</style>
