@@ -180,12 +180,18 @@ const asidePaddingTop = coverImageURL ? '100px' : '60px'
     width: 260px;
     padding: var(--asidePaddingTop) 20px 20px;
     background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    height: 100vh;
   }
   @media (max-width: 640px) {
     aside {
       order: 2;
       width: 100%;
       padding: 40px 20px 20px;
+      position:initial;
+      top:initial;
+      height:initial;
     }
   }
 
