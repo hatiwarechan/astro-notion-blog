@@ -85,4 +85,10 @@ const { heading, posts } = Astro.props
     height: 1.25rem;
     vertical-align: sub;
   }
+  @media (max-width: 640px) {
+    .blog-posts-link ul li a:hover {
+      position: initial;
+      width: initial;
+    }
+  }
 </style>
