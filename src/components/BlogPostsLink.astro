@@ -72,8 +72,6 @@ const { heading, posts } = Astro.props
   }
   .blog-posts-link ul li a:hover {
     background-color: #ddd;
-    position: relative;
-    width: fit-content;
   }
   .blog-posts-link ul li a span,
   .blog-posts-link ul li a img {
@@ -84,11 +82,5 @@ const { heading, posts } = Astro.props
     width: 1.25rem;
     height: 1.25rem;
     vertical-align: sub;
-  }
-  @media (max-width: 640px) {
-    .blog-posts-link ul li a:hover {
-      position: initial;
-      width: initial;
-    }
   }
 </style>
