@@ -30,6 +30,8 @@ export interface RetrieveBlockChildrenResponse {
   block?: Record<string, never>
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface UpdatePageResponse extends PageObject {}
 
 // common interfaces
 interface UserObject {

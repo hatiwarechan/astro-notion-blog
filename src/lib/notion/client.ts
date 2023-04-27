@@ -187,6 +187,28 @@ export async function getNumberOfPagesByTag(tagName: string): Promise<number> {
   const posts = allPosts.filter(post => post.Tags.find((tag) => tag.name === tagName))
   return Math.floor(posts.length / NUMBER_OF_POSTS_PER_PAGE) + (posts.length % NUMBER_OF_POSTS_PER_PAGE > 0 ? 1 : 0)
 }
+ export async function incrementLikes(post:Post): Promise<Post|null> {
+     let result: responses.PageObject
+  
+     const params: requestParams.UpdatePage = {
+       page_id: post.PageId,
+       properties: {
+         Like: {
+           number: (post.Like || 0) + 1,
+         },
+       },
+     }
+  
+     result = (await client.pages.update(
+       params as any // eslint-disable-line @typescript-eslint/no-explicit-any
+     )) as responses.UpdatePageResponse
+  
+     if (!result) {
+       return null
+     }
+  
+     return _buildPost(result)
+   }
 
 export async function getAllBlocksByBlockId(blockId: string): Promise<Block[]> {
   let results: responses.BlockObject[] = []
@@ -804,6 +826,7 @@ function _buildPost(pageObject: responses.PageObject): Post {
         : '',
     FeaturedImage: featuredImage,
     Rank: prop.Rank.number ? prop.Rank.number : 0,
+    Like: prop.Like.number ? prop.Like.number : 0,
   }
 
   return post
