@@ -10,8 +10,18 @@ const { post } = Astro.props
 
 <style>
   .like-button {
+    width: 5em;
+    height: 3em;
     color:var(--fg);
+    border: none;
+    border-radius: 10px;
     margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .like-button {
+    -webkit-appearance: none;
+  }
   }
 </style>
 
