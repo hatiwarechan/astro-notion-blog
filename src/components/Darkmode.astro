@@ -13,7 +13,7 @@
   :root.darkmode {
     --bg: #191919;
     --fg: #ced5d9;
-    --accents-1: #5ca053;
+    --accents-1: #509c83;
     --accents-2: #76c06c;
     --accents-3: #a5a5a5;
   }
@@ -265,10 +265,13 @@
   background-color: rgb(32,32,32)
 }
 .darkmode .blog-posts-link h3 {
-  color: rgb(155,155,155)
+  color: var(--accents-1);
 }
 .darkmode .blog-tags-link h3 {
-  color: rgb(155,155,155)
+  color: var(--accents-1);
+}
+.darkmode .blog-posts-link ul li a {
+  color: #aaaaaa;
 }
 .darkmode .blog-posts-link ul li a:hover {
   background-color: rgb(54, 54, 54);
@@ -289,7 +292,7 @@
   -------------------- */
 .darkmode body{
   --sb-track-color: #2e2e2e;
-  --sb-thumb-color: #5b8655;
+  --sb-thumb-color: var(--accents-1);
 }
   
   /* --------------------
