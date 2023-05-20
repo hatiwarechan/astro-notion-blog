@@ -50,12 +50,12 @@ astro-notion-blog を使えば [Notion](https://www.notion.so) で書けるブ�
 
 <img src="https://user-images.githubusercontent.com/1063435/213967607-338b8728-d7c9-47e4-8192-e955e3f4ce30.png" width="220">
 
-8. プロジェクトを "Connect to Git" を選んで作成し、先ほどフォークした `<your-account>/astro-notion-blog` リポジトリを選んで "Begin setup" をクリックします
-9. 「ビルドの設定」で、
-    1. 「フレームワーク プリセット」でAstroを選択します
-    2. 「環境変数(アドバンスド)」 を開き `NODE_VERSION`, `NOTION_API_SECRET`, `DATABASE_ID` の3つを設定します
-        * `NODE_VERSION` は `v16.13.0` かそれ以上を指定します
-        * 詳しくは [How to deploy a site with Git](https://docs.astro.build/en/guides/deploy/cloudflare/#how-to-deploy-a-site-with-git) をご覧ください
+9. プロジェクトを "Connect to Git" を選んで作成し、先ほどフォークした `<your-account>/astro-notion-blog` リポジトリを選んで "Begin setup" をクリックします
+10. 「ビルドの設定」で、
+    1. 「フレームワーク プリセット」で Astro を選択します
+    2. 「環境変数(アドバンスド)」 を開き `NODE_VERSION`, `NOTION_API_SECRET`, `DATABASE_ID` の 3 つを設定します
+       - `NODE_VERSION` は `v18.16.0` かそれ以上を指定します
+       - 詳しくは [How to deploy a site with Git](https://docs.astro.build/en/guides/deploy/cloudflare/#how-to-deploy-a-site-with-git) をご覧ください
 
 <img src="https://user-images.githubusercontent.com/1063435/213967111-72ea2ad1-ad3b-4629-8b65-7b25bc6ddb31.png" width="400">
 
@@ -74,7 +74,7 @@ Cloudflare Pages のダッシュボードから手動でデプロイするか、
 
 ### 追加の必要要件
 
-- Node.js v16 かそれ以上
+- Node.js v18 かそれ以上
 - Git
 - [Yarn](https://yarnpkg.com/getting-started)
 
