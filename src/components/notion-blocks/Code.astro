@@ -22,14 +22,18 @@ export interface Props {
 
 const { block } = Astro.props
 
-const code = block.Code.RichTexts.map((richText: interfaces.RichText) => richText.Text.Content).join('')
+const code = block.Code.RichTexts.map(
+  (richText: interfaces.RichText) => richText.Text.Content
+).join('')
 const language = block.Code.Language.toLowerCase()
-const grammer = Prism.languages[language.toLowerCase()] || Prism.languages.javascript
+const grammer =
+  Prism.languages[language.toLowerCase()] || Prism.languages.javascript
 ---
 
 <div class="code">
   <div>
     {
+      /* prettier-ignore */
       language === 'mermaid' ? (
         <pre class="mermaid">{code}</pre>
       ) : (
@@ -39,9 +43,7 @@ const grammer = Prism.languages[language.toLowerCase()] || Prism.languages.javas
               Copy
             </button>
           </div>
-          <pre>
-            <code set:html={Prism.highlight(code, grammer, language)} />
-          </pre>
+          <pre><code set:html={Prism.highlight(code, grammer, language)} /></pre>
         </>
       )
     }
@@ -51,7 +53,7 @@ const grammer = Prism.languages[language.toLowerCase()] || Prism.languages.javas
 
 <script>
   import mermaid from 'mermaid'
-  mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+  mermaid.initialize({ startOnLoad: true, theme: 'neutral' })
 </script>
 
 <script>
@@ -76,6 +78,7 @@ const grammer = Prism.languages[language.toLowerCase()] || Prism.languages.javas
   .code {
     display: block;
     width: 100%;
+    margin-bottom: 0.6rem;
   }
   .code > div {
     background: rgb(247, 246, 243);
@@ -101,7 +104,22 @@ const grammer = Prism.languages[language.toLowerCase()] || Prism.languages.javas
     padding: 0.8rem 2rem 2rem;
     font-size: 0.9rem;
     line-height: 1.2rem;
-    white-space: pre-wrap;
+    white-space: pre;
+    width: 100px;
+    min-width: 100%;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      height: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgb(211, 209, 203);
+    }
+    &::-webkit-scrollbar-track {
+      background: rgb(237, 236, 233);
+    }
+  }
+  .code pre.mermaid {
+    padding: 2rem;
   }
   .code pre code {
     color: var(--fg);
