@@ -179,17 +179,43 @@ const asidePaddingTop = coverImageURL ? '75px' : '60px'
     scroll-behavior: smooth;
 }
 
-  aside {
+aside {
     order: 1;
-    width: 250px;
-    padding: var(--asidePaddingTop) 20px 20px;
+    width: 300px;
+    padding: 20px 20px;
     background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #00000000;
+    }
+    &::-webkit-scrollbar-track {
+      background: #00000000;
+    }
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background: var(--sb-thumb-color) ;
+      }
+      &::-webkit-scrollbar-track {
+        background: var(--sb-track-color);
+      }
+    }
   }
+  
   @media (max-width: 640px) {
     aside {
       order: 2;
       width: 100%;
       padding: 40px 20px 20px;
+      position:initial;
+      top:initial;
+      height:initial;
     }
   }
 
