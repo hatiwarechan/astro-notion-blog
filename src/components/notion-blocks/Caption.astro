@@ -16,9 +16,16 @@ const { richTexts } = Astro.props
 
 <style>
   .caption {
+    text-align: center;
     margin-top: 0.3rem;
     font-size: 0.9rem;
     color: var(--accents-3);
     transform:rotateZ(0.05deg);
+  }
+
+  @media (max-width: 840px) {
+    .caption {
+      text-align: initial;
+    }
   }
 </style>
