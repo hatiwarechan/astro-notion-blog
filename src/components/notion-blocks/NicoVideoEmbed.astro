@@ -21,19 +21,22 @@ const iframeProps = {
   scrolling: 'no',
   style: {
     border: 'solid 1px #ccc',
+    margin: '0 auto', // Add this line to center the iframe horizontally
   },
   frameborder: '0',
 }
 ---
 
-<iframe {...iframeProps} />
+<div style="text-align: center;"> <!-- Add a centering container -->
+  <iframe {...iframeProps} />
+</div>
 
 <style>
   @media (max-width: 840px) {
-  iframe[src*="embed.nicovideo.jp/watch"] {
-    width: 100%;
-    max-width: 650px;
-    height: 312px;
+    iframe[src*="embed.nicovideo.jp/watch"] {
+      width: 100%;
+      max-width: 650px;
+      height: 312px;
+    }
   }
-}
 </style>
