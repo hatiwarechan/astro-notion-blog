@@ -1,8 +1,9 @@
 ---
 import * as interfaces from '../../lib/interfaces.ts'
-import { isTweetURL, isSpotifyURL, isBandcampURL, isSoundCloudURL, isNicoVideoURL} from '../../lib/blog-helpers.ts'
+import { isTweetURL, isInstagramURL, isSpotifyURL, isBandcampURL, isSoundCloudURL, isNicoVideoURL} from '../../lib/blog-helpers.ts'
 import Bookmark from './Bookmark.astro'
 import TweetEmbed from './TweetEmbed.astro'
+import InstagramEmbed from './InstagramEmbed.astro'
 import SpotifyEmbed from './SpotifyEmbed.astro'
 import BandcampEmbed from './BandcampEmbed.astro'
 import SoundcloudEmbed from './SoundcloudEmbed.astro'
@@ -28,6 +29,8 @@ try {
     <div class="tweet-embed">
       <TweetEmbed url={url} />
     </div>
+  ) : isInstagramURL(url) ? (
+    <InstagramEmbed url={url} />
   ) : isSpotifyURL(url) ? (
     <SpotifyEmbed url={url} />
   ) : isBandcampURL(url) ? (

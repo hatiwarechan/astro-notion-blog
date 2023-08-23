@@ -175,6 +175,10 @@ export const isTweetURL = (url: URL): boolean => {
   return /https:\/\/twitter.com\/[^/]+\/status\/[\d]+/.test(url.toString())
 }
 
+export const isInstagramURL = (url: URL): boolean => {
+  return /^https:\/\/www\.instagram\.com\/.+/.test(url.toString());
+}
+
 export const isSpotifyURL = (url: URL): boolean => {
   return /^https?:\/\/open\.spotify\.com\/(track|album|playlist|artist|show|episode)\/[a-zA-Z0-9]+/.test(url.toString())
 }
