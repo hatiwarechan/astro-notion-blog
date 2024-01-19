@@ -1,0 +1,28 @@
+--- 
+export const isSpotifyURL = (url: URL): boolean => {
+  return /^https?:\/\/open.spotify\.com\/(track|album|playlist|show|episode)\/[a-zA-Z0-9]+/.test(url.toString());
+}
+
+export interface Props {
+  url: string
+}
+
+const { url } = Astro.props;
+const urlObj = new URL(url);
+
+const isAlbumOrPlaylist = urlObj.pathname.includes('/album/') || urlObj.pathname.includes('/playlist/') || urlObj.pathname.includes('/artist/');
+const height = isAlbumOrPlaylist ? '380' : '152';
+
+const iframeProps = { 
+  src: `https://open.spotify.com/embed${urlObj.pathname}`,
+  height: `${height}px`,
+};
+--- 
+<iframe
+  {...iframeProps} 
+  width="100%"
+  frameBorder="0"
+  allowTransparency="true"
+  allow="encrypted-media"
+/>
+</iframe>
